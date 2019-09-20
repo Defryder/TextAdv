@@ -9,7 +9,7 @@ public class Main {
 		Partie partie = new Partie();
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Veuillez choisir un nom : ");
+		//System.out.println("Veuillez choisir un nom : ");
 		String name = sc.nextLine();
 		Hero hero = new Hero(name);
 		System.out.println(hero.toString());
