@@ -19,6 +19,8 @@ public class Goblin extends Monster{
 		gold = baseStats;
 		for(int i = 0;i<lvl;i++) {
 			gold = gold+ dice.diceThrow(baseDice);
+			hp = hp + dice.diceThrow(baseDice);
+			mp = mp + dice.diceThrow(baseDice);
 			vit = vit+ dice.diceThrow(baseDice);
 			intel = intel+ dice.diceThrow(baseDice);
 			str = str+ dice.diceThrow(baseDice);

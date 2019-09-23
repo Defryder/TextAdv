@@ -17,17 +17,20 @@ public class Partie {
 				
 	}
 	
-	public Monster rencontreMonstre() {
+	public Monster rencontreMonstre(Hero hero) {
 		Dice d = new Dice();
-		int  a =d.diceThrow(100);
+		int  a = d.diceThrow(100);
 		Monster m; 
-		if(a <60) {
-			m= new Goblin(1); 
-		}else if(60 < a && a < 95) {
-			m= new Wolf(1); 			
+		int lvlvl = hero.getLvl() +d.diceThrow(5) - 3;
+		if(lvlvl<1) {
+			lvlvl = 1;
+		}
+		if(a <5) {
+			m= new DragonVert(lvlvl); 
+		}else if(5 <= a && a < 40) {
+			m= new Wolf(lvlvl); 			
 		}else {
-			m= new DragonVert(1); 
-			
+			m= new Goblin(lvlvl); 
 		}
 		
 		System.out.println();

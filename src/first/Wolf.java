@@ -1,11 +1,11 @@
 package first;
 public class Wolf extends Monster{
 	public Wolf(int lvl){
-		this.name = "Green Dragon";
+		this.name = "Wolf";
 		
 		this.armor = dice.diceThrow(3) -1;//0 - 2
-		hp=20;
-		mp =8;
+		hp = 20;
+		mp = 8;
 		int baseStats =4;
 		int baseDice =4;
 		this.lvl = lvl;
@@ -19,7 +19,7 @@ public class Wolf extends Monster{
 		for(int i = 0;i<lvl;i++) {
 			gold = gold+ dice.diceThrow(baseDice);
 			hp = hp + dice.diceThrow(8);
-			mp = mp + dice.diceThrow(5);
+			mp = mp + dice.diceThrow(4);
 			vit = vit+ dice.diceThrow(baseDice);
 			intel = intel+ dice.diceThrow(baseDice);
 			str = str+ dice.diceThrow(baseDice);
