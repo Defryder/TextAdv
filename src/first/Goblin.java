@@ -17,18 +17,32 @@ public class Goblin extends Monster{
 		adr = baseStats;
 		luck = baseStats;
 		gold = baseStats;
-		for(int i = 0;i<lvl;i++) {
-			gold = gold+ dice.diceThrow(baseDice);
-			hp = hp + dice.diceThrow(baseDice);
-			mp = mp + dice.diceThrow(baseDice);
-			vit = vit+ dice.diceThrow(baseDice);
-			intel = intel+ dice.diceThrow(baseDice);
-			str = str+ dice.diceThrow(baseDice);
-			adr = adr+ dice.diceThrow(baseDice);
-			luck = luck+ dice.diceThrow(baseDice);
+		for(int i = 0;i<lvl*baseDice;i++) {
+			int v = dice.diceThrow(5);
+			gold = gold+v-1;//dice.diceThrow(baseDice)
+			switch(v){
+			case 1:
+				vit = vit++; // dice.diceThrow(baseDice)
+				break;
+			case 2:
+				intel = intel++;//+ dice.diceThrow(baseDice)
+				break;
+			case 3:
+				str = str++;//dice.diceThrow(baseDice)
+				break;
+			case 4:
+				adr = adr++;//dice.diceThrow(baseDice)
+
+				break;
+			case 5:
+				luck = luck++;// dice.diceThrow(baseDice)
+				break;}
 			
 		}
-		
+		for(int i = 0;i<lvl ;i++) {
+			hp = hp + dice.diceThrow(baseDice);
+			mp = mp + dice.diceThrow(baseDice);
+		}
 		
 		
 		cou = 4+ dice.diceThrow(6);
