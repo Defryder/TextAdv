@@ -44,6 +44,9 @@ public abstract class  Character {
 		if(hp<0) {
 			b= true;
 			System.out.println("" +name +" êtes mort");
+			if(this.isHero()) {
+				System.exit(1);
+			}
 		}
 		return b;
 	}
