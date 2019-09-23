@@ -7,7 +7,15 @@ public class Hero extends Character{
 	
 	private	int addStat;
 	private int nbPotionSoin;
-	
+	private int nbPotionMana;
+	public int getNbPotionMana() {
+		return nbPotionMana;
+	}
+
+	public void setNbPotionMana(int nbPotionMana) {
+		this.nbPotionMana = nbPotionMana;
+	}
+
 	public int getAddStat() {
 		return addStat;
 	}
@@ -70,6 +78,7 @@ public class Hero extends Character{
 	public Hero(String name){
 		this.name = name;
 		this.nbPotionSoin = 5;
+		this.nbPotionMana = 2;
 		this.SkillOne = "Flying Slash";
 		this.SkillTwo = "";
 		this.SkillThree = "";
@@ -132,14 +141,18 @@ public class Hero extends Character{
 		}
 	}
 	public void potionMana() {
-		 int d =3 +dice.diceThrow(3);
-		 if(mp+d<mpMax) {
-			 mp=mp+d;
-			System.out.println("Vous avez récupérer "+d+"mp, vous avez maintenant "+mp+"MP");			 
-		 }else {
-			 mp = mpMax;
-			 System.out.println("Vous avez récupéré tous vos "+mp+"MP");
-		 }
+		if(nbPotionMana>0) {
+			 int d =3 +dice.diceThrow(3);
+			 if(mp+d<mpMax) {
+				 mp=mp+d;
+				System.out.println("Vous avez récupérer "+d+"mp, vous avez maintenant "+mp+"MP");			 
+			 }else {
+				 mp = mpMax;
+				 System.out.println("Vous avez récupéré tous vos "+mp+"MP");
+			 }			
+		}else {
+			System.out.println("Vous n'avez plus de potion de mana");
+		}
 	}
 	
 	public void pary(){
@@ -170,10 +183,10 @@ public class Hero extends Character{
 	@Override
 	public void skillOne(Character m) {
 		int k = 0;
-		if(this.mp>2) {
+		if(this.mp>7) {
 			System.out.println("Une lame d'air fond sur le l'ennemi :");
 			this.mp = mp-3;
-			k= 6+dice.diceThrow(8)*((this.intel/5)) - m.getArmor();
+			k= 8+dice.diceThrow(8)*((this.intel/5)) - m.getArmor();
 			if(k>0) {
 				m.setHp(m.getHp()- k);				
 				System.out.println("vous infligez "+ k+"HP");
@@ -181,6 +194,9 @@ public class Hero extends Character{
 				System.out.println("elle s'écrase sur l'armure de votre adversaire qui vous toise en ayant l'impression qu'un moustique l'a piqué");
 
 			}
+		}else {
+			System.out.println("une douce brise rafraichit votre adversaire, vos MP sont insuffisants");
+			this.setMp(0);
 		}
 	}
 
