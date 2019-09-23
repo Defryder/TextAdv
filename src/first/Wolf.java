@@ -42,7 +42,6 @@ public class Wolf extends Monster{
 				break;
 			case 4:
 				adr = adr++;//dice.diceThrow(baseDice)
-
 				break;
 			case 5:
 				luck = luck++;// dice.diceThrow(baseDice)
@@ -56,10 +55,10 @@ public class Wolf extends Monster{
 		cha= 8+ dice.diceThrow(5);
 		
 		weapon = new Weapon();
-		weapon.setName("Claws");
+		weapon.setName("Wolf Claws");
 		weapon.setNb_dice(1);
 		weapon.setDice_maxValue(6);
-		weapon.setRawDamage(4);
+		weapon.setRawDamage(2);
 			
 		
 	}
