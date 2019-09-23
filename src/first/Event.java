@@ -38,7 +38,7 @@ public class Event {
 		while(malinois != 8) {
 			switch(mark) {
 			case 1:
-				System.out.println("Vous avez  "+hero.getGold()+" d'or, "+hero.getArmor()+" d'armure, "+hero.getNbPotionSoin()+" potion(s) de soin");
+				System.out.println("Vous avez  "+hero.getGold()+" d'or, "+hero.getArmor()+" d'armure, "+hero.getNbPotionSoin()+" potion(s) de soin"+hero.getNbPotionMana()+" potion(s) de mana");
 				market.demandeActionMarket();
 				malinois = sc.nextInt();
 				market.actionMarket(malinois, hero);
