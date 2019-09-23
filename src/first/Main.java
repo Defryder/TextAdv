@@ -34,7 +34,7 @@ public class Main {
 				stats = partie.doActionStats(action);	
 			}
 			
-			if(event == true) {
+  			if(event == true) {
 				Event.randomEvent(hero, partie);
 				event = false;
 			}

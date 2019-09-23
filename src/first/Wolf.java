@@ -84,6 +84,10 @@ public class Wolf extends Monster{
 	public void skillOne() {
 		//queue du dragon //swipe   ???
 	}
+	@Override
+	public void skillOne(Character m) {
+		//queue du dragon //swipe   ???
+	}
 
 	@Override
 	public void skillTwo() {
@@ -94,5 +98,5 @@ public class Wolf extends Monster{
 	public void skillThree() {
 	//souffle du dragon	
 	}
-	
+
 }
