@@ -42,7 +42,7 @@ public class Main {
 			while(combat == true) {
 
 				if(m ==null) {
-					m= partie.rencontreMonstre();					
+					m= partie.rencontreMonstre(hero);					
 				}
 
 				partie.demandeActionCombat();
@@ -58,15 +58,15 @@ public class Main {
 			}
 			System.out.println(hero.toString());
 			if(nbCombat %5 == 0) {
-				System.out.println("Félicitation, vous avez battu 5 monstres voulez vous vous rendre au marché?(o/n)");
-				String mark = sc.nextLine();
+				System.out.println("Félicitation, vous avez battu 5 monstres voulez vous vous rendre au marché?(0 oui / 1 non)");
+				int mark = sc.nextInt();
 				switch(mark) {
-				case "o":
+				case 0:
 					market.demandeActionMarket();
 					int malinois= sc.nextInt();
 					market.actionMarket(malinois, hero);
 					break;
-				case "n":
+				case 1:
 					break;
 				}
 				
