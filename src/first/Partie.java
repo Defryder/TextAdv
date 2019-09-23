@@ -37,6 +37,7 @@ public class Partie {
 		System.out.println(m.toString());
 		return m;
 	}
+	
 	public void demandeActionCombat(){
 		System.out.println("Que voulez vous faire ? ");
 		System.out.println(" 1 : Attaquer");
