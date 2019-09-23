@@ -23,7 +23,7 @@ public class Market {
 	public void actionMarket(int mar , Hero hero) {
 		switch(mar) {
 		case 1:
-			if (hero.getGold() >(nbAchatArmor+1) * 10) {
+			if (hero.getGold() >= (nbAchatArmor+1) * 10) {
 				hero.setGold(hero.getGold() -(nbAchatArmor+1) * 10 );
 				nbAchatArmor ++;
 				hero.setArmor(hero.getArmor()+1);
