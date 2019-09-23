@@ -27,7 +27,7 @@ public class Partie {
 		}
 		if(a <5) {
 			m= new DragonVert(lvlvl); 
-		}else if(60 < a && a < 95) {
+		}else if(5 <= a && a < 40) {
 			m= new Wolf(lvlvl); 			
 		}else {
 			m= new Goblin(lvlvl); 

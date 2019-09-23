@@ -1,7 +1,7 @@
 package first;
 public class Wolf extends Monster{
 	public Wolf(int lvl){
-		this.name = "Green Dragon";
+		this.name = "Wolf";
 		
 		this.armor = dice.diceThrow(3) -1;//0 - 2
 		hp=20;

@@ -8,7 +8,7 @@ public abstract class  Character {
 	protected int hpMax;
 	protected int mpMax;
 	protected int luck;
-	
+
 	protected int xp;
 	protected int gold;
 	public int getGold() {
@@ -20,13 +20,13 @@ public abstract class  Character {
 	}
 
 	protected int lvl;
-	
+
 	protected String name;
-	
+
 	protected Dice dice = new Dice();
-//	int atk;
-//	int def;
-	
+	//	int atk;
+	//	int def;
+
 	protected int cha;
 	protected int vit;
 	protected int intel;
@@ -36,9 +36,9 @@ public abstract class  Character {
 
 	protected int armor;	
 	protected Weapon weapon;
-	
+
 	//classe / race
-	
+
 	public boolean checkDeath() {
 		boolean b = false;
 		if(hp<0) {
@@ -47,10 +47,10 @@ public abstract class  Character {
 		}
 		return b;
 	}
-	
+
 	public String toString() {
 		String newLine = System.getProperty("line.separator");
-		 
+
 		return ("  " +name+ newLine + "hp :"+hp+ "  mp :"+mp +"  vit :"+vit+"  intel :"+intel+"  str :"+str+"  adr :"+adr+newLine +"cou :"+cou+"  cha :"+cha+newLine +"armor :" + armor +newLine + weapon.toString());
 
 	}
@@ -61,8 +61,8 @@ public abstract class  Character {
 	public abstract boolean pary(int vitAtacker, int strAtacker);
 	public abstract boolean evade(int vitAtacker);
 	public  abstract boolean run();
-	
-	
+
+
 	public void attack(Character hero) {
 		if(this.isHero()) {
 			System.out.println(name+" attaque :");						
@@ -78,14 +78,14 @@ public abstract class  Character {
 			}else {
 				System.out.println(name+" inflige " + degat + ",il perd " + (degat - hero.getArmor()) + " HP");								
 			}
-			
+
 		}else {
 			if(hero.isHero()) {
 				System.out.println("Votre armure vous a protégé");								
 			}else {
 				System.out.println("Son armure l'a protégé");				
 			}
-			
+
 		}
 	}
 
@@ -93,7 +93,7 @@ public abstract class  Character {
 	public  abstract void skillTwo();
 	public  abstract void skillThree();
 
-	
+
 	public int getHpMax() {
 		return hpMax;
 	}
@@ -203,5 +203,5 @@ public abstract class  Character {
 	public void setLvl(int lvl) {
 		this.lvl = lvl;
 	}
-	
+
 }

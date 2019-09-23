@@ -23,6 +23,7 @@ public class Hero extends Character{
 		if(hp<0) {
 			b= true;
 			System.out.println("Vous êtes mort");
+			System.exit(1);
 		}
 		return b;
 	}

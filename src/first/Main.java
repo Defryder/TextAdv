@@ -59,7 +59,7 @@ public class Main {
 			System.out.println(hero.toString());
 			if(nbCombat %1 == 0) {
 				System.out.println("Félicitation, vous avez battu 5 monstres voulez vous vous rendre au marché?(o/n)");
-				String mark = sc.nextLine();
+				int mark = sc.nextInt();
 				switch(mark) {
 				case 0:
 					market.demandeActionMarket();
