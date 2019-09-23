@@ -8,6 +8,7 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		Market market = new Market();
+		System.out.println("test");
 		System.out.println("Veuillez choisir un nom : ");
 		String name = sc.nextLine();
 		Hero hero = new Hero(name);
