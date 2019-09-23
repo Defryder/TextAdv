@@ -119,14 +119,18 @@ public class Hero extends Character{
 //		}
 //	}
 	public void potionSoin() {
-		nbPotionSoin --;
-		int d =5 +dice.diceThrow(6);
-		if(hp+d<hpMax) {
-			hp=hp+d;
-			System.out.println("Vous vous êtes soignée de "+d+" vous avez maintenant "+hp+"HP");			 
+		if(nbPotionSoin > 0) {
+			nbPotionSoin --;
+			int d =5 +dice.diceThrow(6);
+			if(hp+d<hpMax) {
+				hp=hp+d;
+				System.out.println("Vous vous êtes soignée de "+d+" vous avez maintenant "+hp+"HP");			 
+			}else {
+				hp = hpMax;
+				System.out.println("Vous vous êtes totalement soignée, vous avez maintenant "+hp+"HP");
+			}			
 		}else {
-			hp = hpMax;
-			System.out.println("Vous vous êtes totalement soignée, vous avez maintenant "+hp+"HP");
+			System.out.println("Vous n'avez plus de potion de soin");
 		}
 	}
 	public void potionMana() {
