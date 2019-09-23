@@ -38,16 +38,22 @@ public class Event {
 			Scanner sc = new Scanner(System.in);
 			Market market = new Market();
 			int mark = sc.nextInt();
-			switch(mark) {
-			case 1:
-				market.demandeActionMarket();
-				int malinois = sc.nextInt();
-				market.actionMarket(malinois, hero);
-				break;
-			case 2:
-				break;
-			default:
-				System.out.println("market fatal error");
+			int malinois = 53;
+			while(malinois != 8) {
+				switch(mark) {
+				case 1:
+					System.out.println("Vous avez  "+hero.getGold()+" d'or, "+hero.getArmor()+" d'armure, "+hero.getNbPotionSoin()+" potion(s) de soin");
+					market.demandeActionMarket();
+					malinois = sc.nextInt();
+					market.actionMarket(malinois, hero);
+					break;
+				case 2:
+					malinois = 8;
+					break;
+				default:
+					malinois = 8;
+					System.out.println("market fatal error");
+				}		
 			}
 		}
 		else {

@@ -131,6 +131,9 @@ public class Partie {
 		case 2: // popo soin
 			hero.potionSoin();
 			break;
+		case 3: // popo soin
+			hero.potionMana();
+			break;
 
 		case 4: //go Stat
 			combat = true; // on va changer stats dans le main
@@ -212,6 +215,7 @@ public class Partie {
 		System.out.println("Que voulez vous faire ? ");
 		System.out.println(" 0 : Avancer");
 		System.out.println(" 2 : Utiliser une potion de soin");
+		System.out.println(" 3 : Utiliser une potion de mana");
 //		System.out.println(" 3 : Ouvrir l'inventaire");
 		System.out.println(" 4 : Voir vos caractéristiques");
 		
