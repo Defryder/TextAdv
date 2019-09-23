@@ -1,8 +1,6 @@
 
 package first;
 
-import java.util.Random;
-
 public class Hero extends Character{
 	
 	//classe / race
@@ -21,9 +19,7 @@ public class Hero extends Character{
 	public boolean checkDeath() {
 		boolean b = false;
 		if(hp<0) {
-			b= true;
-			System.out.println("Vous êtes mort");
-			System.exit(1);
+			b = true;
 		}
 		return b;
 	}
