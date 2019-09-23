@@ -1,6 +1,7 @@
 
 public class Goblin extends Monster{
 	public Goblin(){
+		System.out.println("Ta mere     en slip!!");
 		this.name = "Goblin";
 		
 		this.armor = dice.diceThrow(2)-1;//0 - 1
