@@ -2,10 +2,14 @@ package first;
 
 public class Market {
 	
-	private int nbAchatArmor = 0;
+	private int armor = 0;
 	
+	public Market(Hero hero) {
+		armor = hero.getArmor();
+	}
+
 	public void demandeActionMarket() {
-		int a = (nbAchatArmor+1) * 10 ;
+		int a = armor * 10 ;
 		System.out.println("Le marché est ouvert: ");			
 		System.out.println(" 1 : achetez 1 pt d'armure  ("+a+"po)");
 		System.out.println(" 2 : achetez 1 potion de soin (15 po)");
@@ -23,9 +27,9 @@ public class Market {
 	public void actionMarket(int mar , Hero hero) {
 		switch(mar) {
 		case 1:
-			if (hero.getGold() >= (nbAchatArmor+1) * 10) {
-				hero.setGold(hero.getGold() -(nbAchatArmor+1) * 10 );
-				nbAchatArmor ++;
+			if (hero.getGold() >= armor * 10) {
+				hero.setGold(hero.getGold() - armor * 10 );
+				armor++;
 				hero.setArmor(hero.getArmor()+1);
 				
 			}else {
