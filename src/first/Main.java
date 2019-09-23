@@ -8,7 +8,6 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		Market market = new Market();
-		System.out.println("test");
 		System.out.println("Veuillez choisir un nom : ");
 		String name = sc.nextLine();
 		Hero hero = new Hero(name);
@@ -58,30 +57,25 @@ public class Main {
 			
 			}
 			System.out.println(hero.toString());
-			if(nbCombat %3 == 0) {
-					System.out.println("Félicitation, vous avez battu 3 monstres voulez vous vous rendre au marché?");
-					System.out.println("Entrée : 1");
-					System.out.println("Sortie : 2");
-					sc = new Scanner(System.in);
-					String mark = sc.nextLine();
-//					System.out.println(mark);
-					int malinois = 0;
-					while( malinois != 8 ) {
-						switch(mark) {
-						case "o":
-							market.demandeActionMarket();
-							malinois = sc.nextInt();
-							market.actionMarket(malinois, hero);
-							break;
-						case "n":
-							malinois = 8;
-							break;
-						default:
-							System.out.println("market fatal error");
-						}						
-					}
-				
 
+			if(nbCombat%3 == 0) {
+				System.out.println("Vous arrivez près d'un marchant.");
+				System.out.println("Que voulez vous faire ? ");
+				System.out.println(" 1 : Marchander");
+				System.out.println(" 2 : Partir");
+				sc = new Scanner(System.in);
+				int mark = sc.nextInt();
+				switch(mark) {
+				case 1:
+					market.demandeActionMarket();
+					int malinois = sc.nextInt();
+					market.actionMarket(malinois, hero);
+					break;
+				case 2:
+					break;
+				default:
+					System.out.println("market fatal error");
+				}
 			}
 		}			
 	}

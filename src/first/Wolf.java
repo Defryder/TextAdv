@@ -46,8 +46,9 @@ public class Wolf extends Monster{
 			case 5:
 				this.luck = luck+1;// dice.diceThrow(baseDice)
 				break;
-			}
-		}
+		  }
+	
+	  	}
 		for(int i = 0;i<lvl ;i++) {
 			hp = hp + dice.diceThrow(baseDice);
 			mp = mp + dice.diceThrow(baseDice);
@@ -56,7 +57,7 @@ public class Wolf extends Monster{
 		cha= 8+ dice.diceThrow(5);
 		
 		weapon = new Weapon();
-		weapon.setName("Claws");
+		weapon.setName("Wolf Claws");
 		weapon.setNb_dice(1);
 		weapon.setDice_maxValue(6);
 		weapon.setRawDamage(2);

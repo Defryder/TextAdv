@@ -52,7 +52,6 @@ public class DragonVert extends Monster{
 			hp = hp + dice.diceThrow(baseDice);
 			mp = mp + dice.diceThrow(baseDice);
 		}
-
 		
 		cou = 8+ dice.diceThrow(7);
 		cha= 8+ dice.diceThrow(5);
