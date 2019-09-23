@@ -39,8 +39,8 @@ public class Main {
 				event = false;
 			}
 			stop = hero.checkDeath();
-			System.out.println("Vous êtes mort");
-			System.out.println("Now playing \"Sad_kazoo.mp3\"");
-		}			
+		}
+		System.out.println("Vous êtes mort");
+		System.out.println("Now playing \"Sad_kazoo.mp3\"");
 	}
 }
