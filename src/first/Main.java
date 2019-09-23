@@ -8,6 +8,7 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		Market market = new Market();
+		System.out.println("test");
 		System.out.println("Veuillez choisir un nom : ");
 		String name = sc.nextLine();
 		Hero hero = new Hero(name);
@@ -19,12 +20,12 @@ public class Main {
 		boolean stop = false;
 		boolean stats = false;
 		int action = 255;
-		Monster m =null;
+		Monster m = null;
 		int nbCombat = 0;
 		while(stop == false) {
 			while(combat == false && stats == false) {
 				partie.demandeActionHorsCombat();
-				action= sc.nextInt();
+				action = sc.nextInt();
 				if(action == 0) {
 					combat = partie.doActionHorsCombat(action);						
 				}else{
@@ -34,25 +35,25 @@ public class Main {
 
 			while(stats == true) {
 				partie.demandeActionStats();
-				action= sc.nextInt();
+				action = sc.nextInt();
 				stats = partie.doActionStats(action);	
 
 			}
 			
 			while(combat == true) {
 
-				if(m ==null) {
-					m= partie.rencontreMonstre(hero);					
+				if(m == null) {
+					m = partie.rencontreMonstre(hero);					
 				}
 
 				partie.demandeActionCombat();
-				action= sc.nextInt();
+				action = sc.nextInt();
 				combat = partie.doAction(action, m);	
 				if(combat == false) {
 					nbCombat ++;
 					hero.xp(m.getXp());
 					hero.gold(m.getGold());
-					m =null;
+					m = null;
 				}
 			
 			}
@@ -84,6 +85,4 @@ public class Main {
 			}
 		}			
 	}
-
-	
 }
