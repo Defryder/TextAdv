@@ -23,7 +23,7 @@ public class Event {
 				partie.demandeActionCombat();
 				Scanner sc = new Scanner(System.in);
 				combat = partie.doAction(sc.nextInt(), m);	
-				if(combat == false) {
+				if(combat == false && !hero.checkDeath()) {
 					hero.xp(m.getXp());
 					hero.gold(m.getGold());
 					m = null;
