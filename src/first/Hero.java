@@ -1,8 +1,6 @@
 
 package first;
 
-import java.util.Random;
-
 public class Hero extends Character{
 	
 	//classe / race
@@ -24,6 +22,7 @@ public class Hero extends Character{
 			b= true;
 			System.out.println("Vous êtes mort");
 			System.exit(1);
+
 		}
 		return b;
 	}
