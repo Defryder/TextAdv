@@ -20,12 +20,12 @@ public class Main {
 		boolean stop = false;
 		boolean stats = false;
 		int action = 255;
-		Monster m =null;
+		Monster m = null;
 		int nbCombat = 0;
 		while(stop == false) {
 			while(combat == false && stats == false) {
 				partie.demandeActionHorsCombat();
-				action= sc.nextInt();
+				action = sc.nextInt();
 				if(action == 0) {
 					combat = partie.doActionHorsCombat(action);						
 				}else{
@@ -35,45 +35,46 @@ public class Main {
 
 			while(stats == true) {
 				partie.demandeActionStats();
-				action= sc.nextInt();
+				action = sc.nextInt();
 				stats = partie.doActionStats(action);	
 
 			}
 			
 			while(combat == true) {
 
-				if(m ==null) {
-					m= partie.rencontreMonstre(hero);					
+				if(m == null) {
+					m = partie.rencontreMonstre(hero);					
 				}
 
 				partie.demandeActionCombat();
-				action= sc.nextInt();
+				action = sc.nextInt();
 				combat = partie.doAction(action, m);	
 				if(combat == false) {
 					nbCombat ++;
 					hero.xp(m.getXp());
 					hero.gold(m.getGold());
-					m =null;
+					m = null;
 				}
 			
 			}
 			System.out.println(hero.toString());
-			if(nbCombat %3 == 0) {
+			if(nbCombat%1 == 0) {
 				System.out.println("Félicitation, vous avez battu 5 monstres voulez vous vous rendre au marché?(0/1)");
-				int mark = sc.nextInt();
+				sc = new Scanner(System.in);
+				String mark = sc.nextLine();
+				System.out.println(mark);
 				switch(mark) {
-				case 0:
+				case "o":
 					market.demandeActionMarket();
-					int malinois= sc.nextInt();
+					int malinois = sc.nextInt();
 					market.actionMarket(malinois, hero);
 					break;
-				case 1:
+				case "n":
 					break;
+				default:
+					System.out.println("market fatal error");
 				}
-				
 			}
 		}			
 	}
-
-	
 }
