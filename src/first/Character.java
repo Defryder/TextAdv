@@ -1,4 +1,4 @@
-
+package first;
 public abstract class  Character {
 
 	//attribut 
@@ -9,6 +9,17 @@ public abstract class  Character {
 	protected int mpMax;
 	protected int luck;
 	
+	protected int xp;
+	protected int gold;
+	public int getGold() {
+		return gold;
+	}
+
+	public void setGold(int gold) {
+		this.gold = gold;
+	}
+
+	protected int lvl;
 	
 	protected String name;
 	
@@ -43,20 +54,37 @@ public abstract class  Character {
 		return ("  " +name+ newLine + "hp :"+hp+ "  mp :"+mp +"  vit :"+vit+"  intel :"+intel+"  str :"+str+"  adr :"+adr+newLine +"cou :"+cou+"  cha :"+cha+newLine +"armor :" + armor +newLine + weapon.toString());
 
 	}
-	
+	public boolean isHero() {
+		return false;
+	}
 	//action possible
 	public abstract boolean pary(int vitAtacker, int strAtacker);
 	public abstract boolean evade(int vitAtacker);
 	public  abstract boolean run();
+	
+	
 	public void attack(Character hero) {
-		System.out.println("Le gobelin vous attaque :");
-		int degat = this.getWeapon().damage();
+		if(this.isHero()) {
+			System.out.println(name+" attaque :");						
+		}else {
+			System.out.println("Le "+name+" vous attaque :");			
+		}
+		int degat =(int) (1+this.str/10.)*this.getWeapon().damage();
 		if(degat>hero.getArmor()) {
 			hero.setHp(hero.getHp() - (degat - hero.getArmor()));
-			System.out.println("Le gobelin vous inflige " + degat + ",vous perdez " + (degat - hero.getArmor()) + " HP");				
-			System.out.println("Il vous reste " + hero.getHp() + " HP");					
+			if(hero.isHero()) {
+				System.out.println("Le "+name+" vous inflige " + degat + ",vous perdez "+(degat - hero.getArmor()) + " HP");				
+				System.out.println("Il vous reste "+ hero.getHp() + " HP");					
+			}else {
+				System.out.println(name+" inflige " + degat + ",il perd " + (degat - hero.getArmor()) + " HP");								
+			}
+			
 		}else {
-			System.out.println("Votre armure vous a protégé");				
+			if(hero.isHero()) {
+				System.out.println("Votre armure vous a protégé");								
+			}else {
+				System.out.println("Son armure l'a protégé");				
+			}
 			
 		}
 	}
@@ -159,4 +187,21 @@ public abstract class  Character {
 	public void setAdr(int adr) {
 		this.adr = adr;
 	}
+
+	public int getXp() {
+		return xp;
+	}
+
+	public void setXp(int xp) {
+		this.xp = xp;
+	}
+
+	public int getLvl() {
+		return lvl;
+	}
+
+	public void setLvl(int lvl) {
+		this.lvl = lvl;
+	}
+	
 }

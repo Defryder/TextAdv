@@ -1,4 +1,4 @@
-
+package first;
 public abstract class Monster extends Character{
 	
 	//classe / race
