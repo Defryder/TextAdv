@@ -57,7 +57,8 @@ public class Main {
 			
 			}
 			System.out.println(hero.toString());
-			if(nbCombat%1 == 0) {
+
+			if(nbCombat%3 == 0) {
 				System.out.println("Vous arrivez près d'un marchant.");
 				System.out.println("Que voulez vous faire ? ");
 				System.out.println(" 1 : Marchander");

@@ -32,27 +32,26 @@ public class DragonVert extends Monster{
 			gold = gold+v+3;//dice.diceThrow(baseDice)
 			switch(v){
 			case 1:
-				vit = vit++; // dice.diceThrow(baseDice)
+				this.vit =this.vit +1; // dice.diceThrow(baseDice)
 				break;
 			case 2:
-				intel = intel++;//+ dice.diceThrow(baseDice)
+				this.intel = this.intel+1;//+ dice.diceThrow(baseDice)
 				break;
 			case 3:
-				str = str++;//dice.diceThrow(baseDice)
+				this.str = this.str+1;//dice.diceThrow(baseDice)
 				break;
 			case 4:
-				adr = adr++;//dice.diceThrow(baseDice)
-
+				this.adr = this.adr+1;//dice.diceThrow(baseDice)
 				break;
 			case 5:
-				luck = luck++;// dice.diceThrow(baseDice)
-				break;}
+				this.luck = luck+1;// dice.diceThrow(baseDice)
+				break;
+			}
 		}
 		for(int i = 0;i<lvl ;i++) {
 			hp = hp + dice.diceThrow(baseDice);
 			mp = mp + dice.diceThrow(baseDice);
 		}
-
 		
 		cou = 8+ dice.diceThrow(7);
 		cha= 8+ dice.diceThrow(5);

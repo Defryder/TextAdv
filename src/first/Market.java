@@ -33,7 +33,7 @@ public class Market {
 			}
 			break;
 		case 2:
-			if (hero.getGold() >15) {
+			if (hero.getGold() >= 15) {
 				hero.setNbPotionSoin(hero.getNbPotionSoin() + 1 );
 				hero.setGold(hero.getGold()-15);
 			}
@@ -41,6 +41,7 @@ public class Market {
 		case 8:
 			break;
 		}
+
 	}
 	
 }
