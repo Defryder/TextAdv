@@ -30,7 +30,7 @@ public class Event {
 		System.out.println("Que voulez vous faire ? ");
 		System.out.println(" 1 : Marchander");
 		System.out.println(" 2 : Partir");
-		Market market = new Market();
+		Market market = new Market(hero);
 		int mark = sc.nextInt();
 		switch(mark) {
 		case 1:
