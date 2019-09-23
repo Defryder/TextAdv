@@ -23,7 +23,7 @@ public class Market {
 	public void actionMarket(int mar , Hero hero) {
 		switch(mar) {
 		case 1:
-			if (hero.getGold() >(nbAchatArmor+1) * 10) {
+			if (hero.getGold() >= (nbAchatArmor+1) * 10) {
 				hero.setGold(hero.getGold() -(nbAchatArmor+1) * 10 );
 				nbAchatArmor ++;
 				hero.setArmor(hero.getArmor()+1);
@@ -33,7 +33,7 @@ public class Market {
 			}
 			break;
 		case 2:
-			if (hero.getGold() >15) {
+			if (hero.getGold() >= 15) {
 				hero.setNbPotionSoin(hero.getNbPotionSoin() + 1 );
 				hero.setGold(hero.getGold()-15);
 			}
@@ -41,6 +41,7 @@ public class Market {
 		case 8:
 			break;
 		}
+
 	}
 	
 }

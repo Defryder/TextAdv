@@ -58,18 +58,29 @@ public class Main {
 			}
 			System.out.println(hero.toString());
 			if(nbCombat %3 == 0) {
-				System.out.println("Félicitation, vous avez battu 5 monstres voulez vous vous rendre au marché?(0/1)");
-				int mark = sc.nextInt();
-				switch(mark) {
-				case 0:
-					market.demandeActionMarket();
-					int malinois= sc.nextInt();
-					market.actionMarket(malinois, hero);
-					break;
-				case 1:
-					break;
-				}
+					System.out.println("Félicitation, vous avez battu 3 monstres voulez vous vous rendre au marché?");
+					System.out.println("Entrée : 1");
+					System.out.println("Sortie : 2");
+					sc = new Scanner(System.in);
+					String mark = sc.nextLine();
+//					System.out.println(mark);
+					int malinois = 0;
+					while( malinois != 8 ) {
+						switch(mark) {
+						case "o":
+							market.demandeActionMarket();
+							malinois = sc.nextInt();
+							market.actionMarket(malinois, hero);
+							break;
+						case "n":
+							malinois = 8;
+							break;
+						default:
+							System.out.println("market fatal error");
+						}						
+					}
 				
+
 			}
 		}			
 	}
