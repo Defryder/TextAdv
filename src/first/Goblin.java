@@ -105,9 +105,8 @@ public class Goblin extends Monster{
 	}
 
 	@Override
-	public void skillOne() {
+	public void skillOne(Character m) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -118,6 +117,12 @@ public class Goblin extends Monster{
 
 	@Override
 	public void skillThree() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void skillOne() {
 		// TODO Auto-generated method stub
 		
 	}

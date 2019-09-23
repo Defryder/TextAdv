@@ -37,11 +37,38 @@ public abstract class  Character {
 	protected int armor;	
 	protected Weapon weapon;
 
+	protected String SkillOne;
+	protected String SkillTwo;
+	public String getSkillOne() {
+		return SkillOne;
+	}
+
+	public void setSkillOne(String skillOne) {
+		SkillOne = skillOne;
+	}
+
+	public String getSkillTwo() {
+		return SkillTwo;
+	}
+
+	public void setSkillTwo(String skillTwo) {
+		SkillTwo = skillTwo;
+	}
+
+	public String getSkillThree() {
+		return SkillThree;
+	}
+
+	public void setSkillThree(String skillThree) {
+		SkillThree = skillThree;
+	}
+
+	protected String SkillThree;
 	//classe / race
 
 	public boolean checkDeath() {
 		boolean b = false;
-		if(hp<0) {
+		if(hp<=0) {
 			b= true;
 			System.out.println("" +name +" êtes mort");
 			
@@ -90,7 +117,7 @@ public abstract class  Character {
 		}
 	}
 
-	public  abstract void skillOne();
+	public  abstract void skillOne(Character m);
 	public  abstract void skillTwo();
 	public  abstract void skillThree();
 

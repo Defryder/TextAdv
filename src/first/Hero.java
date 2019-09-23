@@ -20,7 +20,7 @@ public class Hero extends Character{
 
 	public boolean checkDeath() {
 		boolean b = false;
-		if(hp<0) {
+		if(hp<=0) {
 			b= true;
 			System.out.println("Vous êtes mort");
 			System.exit(1);
@@ -74,7 +74,9 @@ public class Hero extends Character{
 	public Hero(String name){
 		this.name = name;
 		this.nbPotionSoin = 5;
-
+		this.SkillOne = "Flying Slash";
+		this.SkillTwo = "";
+		this.SkillThree = "";
 		this.armor = 1;
 		hp=25 + dice.diceThrow(6)+dice.diceThrow(6);
 		mp =10 + dice.diceThrow(6);
@@ -170,9 +172,20 @@ public class Hero extends Character{
 	}
 
 	@Override
-	public void skillOne() {
-		// TODO Auto-generated method stub
-		
+	public void skillOne(Character m) {
+		int k = 0;
+		if(this.mp>2) {
+			System.out.println("Une lame d'air fond sur le l'ennemi :");
+			this.mp = mp-3;
+			k= 6+dice.diceThrow(8)*((this.intel/5)) - m.getArmor();
+			if(k>0) {
+				m.setHp(m.getHp()- k);				
+				System.out.println("vous infligez "+ k+"HP");
+			}else {
+				System.out.println("elle s'écrase sur l'armure de votre adversaire qui vous toise en ayant l'impression qu'un moustique l'a piqué");
+
+			}
+		}
 	}
 
 	@Override
@@ -186,5 +199,6 @@ public class Hero extends Character{
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }
