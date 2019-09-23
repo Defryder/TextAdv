@@ -9,11 +9,6 @@ public class Main {
 		Partie partie = new Partie();
 		Scanner sc = new Scanner(System.in);
 		
-		
-		//test git luc remote
-		
-		
-		
 		//System.out.println("Veuillez choisir un nom : ");
 		String name = sc.nextLine();
 		Hero hero = new Hero(name);
