@@ -43,7 +43,7 @@ public class Partie {
 		System.out.println(" 1 : Attaquer");
 		System.out.println(" 2 : Utiliser une potion");
 		System.out.println(" 3 : Fuir");
-//		System.out.println(" 1 : Skill 1");
+		System.out.println(" 4 : Skill "+hero.getSkillOne());
 //		System.out.println(" 1 : Skill 2");
 //		System.out.println(" 1 : Skill 3");
 		
@@ -98,6 +98,27 @@ public class Partie {
 			
 			}
 			break;
+		case 4:
+			if(m.getCou()<hero.getCou()) {
+				hero.skillOne(m);
+				combat = !m.checkDeath();
+				if(combat ==false) {
+					break;
+				}
+				m.attack(hero);
+				combat = !hero.checkDeath();
+			}else{
+				System.out.println("Le "+m.getName()+" est plus courageux que vous");				
+				m.attack(hero);
+				combat = !hero.checkDeath();
+				if(combat ==false) {
+					break;
+				}
+				hero.skillOne(m);
+				combat = !m.checkDeath();
+			}
+			break;
+
 		}
 		return combat;
 	}

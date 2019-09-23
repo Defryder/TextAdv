@@ -3,15 +3,7 @@ public abstract class Monster extends Character{
 	
 	//classe / race
 	
-	public boolean checkDeath() {
-		boolean b = false;
-		if(hp<0) {
-			b= true;
-			System.out.println(name+" est mort");
-		}
-		return b;
-	}
-	
+
 	public String toString() {
 		String newLine = System.getProperty("line.separator");
 		 

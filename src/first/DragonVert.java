@@ -81,7 +81,7 @@ public class DragonVert extends Monster{
 	}
 
 	@Override
-	public void skillOne() {
+	public void skillOne(Character m) {
 		//queue du dragon //swipe   ???
 	}
 
@@ -93,6 +93,12 @@ public class DragonVert extends Monster{
 	@Override
 	public void skillThree() {
 	//souffle du dragon	
+	}
+
+	@Override
+	public void skillOne() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
