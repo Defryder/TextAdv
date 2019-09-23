@@ -41,10 +41,12 @@ public class Partie {
 	public void demandeActionCombat(){
 		System.out.println("Que voulez vous faire ? ");
 		System.out.println(" 1 : Attaquer");
-		System.out.println(" 2 : Utiliser une potion");
-		System.out.println(" 3 : Fuir");
+		System.out.println(" 2 : Utiliser une potion de soin");
+		System.out.println(" 3 : Utiliser une potion de mana");
 		System.out.println(" 4 : Skill "+hero.getSkillOne());
-//		System.out.println(" 1 : Skill 2");
+		System.out.println(" 5 : Fuir");
+
+		//		System.out.println(" 1 : Skill 2");
 //		System.out.println(" 1 : Skill 3");
 		
 	}
