@@ -19,7 +19,7 @@ public class Partie {
 	
 	public Monster rencontreMonstre(Hero hero) {
 		Dice d = new Dice();
-		int  a =d.diceThrow(100);
+		int  a = d.diceThrow(100);
 		Monster m; 
 		int lvlvl = hero.getLvl() +d.diceThrow(5) - 3;
 		if(lvlvl<1) {
@@ -27,7 +27,7 @@ public class Partie {
 		}
 		if(a <5) {
 			m= new DragonVert(lvlvl); 
-		}else if(60 < a && a < 95) {
+		}else if(5 <= a && a < 40) {
 			m= new Wolf(lvlvl); 			
 		}else {
 			m= new Goblin(lvlvl); 

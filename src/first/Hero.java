@@ -26,6 +26,7 @@ public class Hero extends Character{
 				System.exit(1);
 			}
 			System.out.println("Vous êtes mort");
+			System.exit(1);
 		}
 		return b;
 	}
