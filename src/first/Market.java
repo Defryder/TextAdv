@@ -14,7 +14,7 @@ public class Market {
 		System.out.println("Le marché est ouvert: ");			
 		System.out.println(" 1 : achetez 1 pt d'armure  ("+a+"po)");
 		System.out.println(" 2 : achetez 1 potion de soin (15 po)");
-		System.out.println(" 3 : ajoutez 1 potion de soin (20 po)");
+		System.out.println(" 3 : ajoutez 1 potion de mana (20 po)");
 
 //		System.out.println(" 4 : ajoutez 1pt en Intel");
 //		System.out.println(" 5 : ajoutez 1pt en Luck");
