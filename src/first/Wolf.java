@@ -4,8 +4,8 @@ public class Wolf extends Monster{
 		this.name = "Wolf";
 		
 		this.armor = dice.diceThrow(3) -1;//0 - 2
-		hp=20;
-		mp =8;
+		hp = 20;
+		mp = 8;
 		int baseStats =4;
 		int baseDice =4;
 		this.lvl = lvl;
