@@ -1,17 +1,33 @@
-
+package first;
 public class Goblin extends Monster{
-	public Goblin(){
-		System.out.println("Ta mere     en slip!!");
+	public Goblin(int lvl){
 		this.name = "Goblin";
 		
 		this.armor = dice.diceThrow(2)-1;//0 - 1
 		hp=10 + dice.diceThrow(6);
 		mp =0 + dice.diceThrow(6);
 
-		vit = 2+ dice.diceThrow(3);
-		intel = 2+ dice.diceThrow(3);
-		str = 2+ dice.diceThrow(3);
-		adr = 2+ dice.diceThrow(3);
+		int baseStats =2;
+		int baseDice =3;
+		this.lvl = lvl;
+		xp = lvl* 2;
+		vit = baseStats;
+		intel = baseStats;
+		str = baseStats;
+		adr = baseStats;
+		luck = baseStats;
+		gold = baseStats;
+		for(int i = 0;i<lvl;i++) {
+			gold = gold+ dice.diceThrow(baseDice);
+			vit = vit+ dice.diceThrow(baseDice);
+			intel = intel+ dice.diceThrow(baseDice);
+			str = str+ dice.diceThrow(baseDice);
+			adr = adr+ dice.diceThrow(baseDice);
+			luck = luck+ dice.diceThrow(baseDice);
+			
+		}
+		
+		
 		
 		cou = 4+ dice.diceThrow(6);
 		cha= 0+ dice.diceThrow(4);

@@ -1,3 +1,4 @@
+package first;
 public class Weapon {
 	private String name;
 	private int nb_dice;
@@ -15,7 +16,7 @@ public class Weapon {
 		
 		for(int i =0;i<nb_dice;i++) {
 			k = k+d.diceThrow(dice_maxValue);
-			System.out.println("Weapon dice gives "+k +" damage");
+//			System.out.println("Weapon dice gives "+k +" damage");
 		}
 		return k;
 	}

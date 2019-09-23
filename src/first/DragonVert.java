@@ -1,18 +1,32 @@
-
+package first;
 public class DragonVert extends Monster{
-	public DragonVert(){
+	public DragonVert(int lvl){
 		this.name = "Green Dragon";
 		
 		this.armor = dice.diceThrow(2) + 1;//2 - 3
-		hp=30 + dice.diceThrow(15);
-		mp =12 + dice.diceThrow(10);
+		hp=30;
+		mp =12;
 		int baseStats =5;
 		int baseDice =5;
-		
-		vit = baseStats+ dice.diceThrow(baseDice);
-		intel = baseStats+ dice.diceThrow(baseDice);
-		str = baseStats+ dice.diceThrow(baseDice);
-		adr = baseStats+ dice.diceThrow(baseDice);
+		this.lvl = lvl;
+		xp = lvl * 20;
+		vit = baseStats;
+		intel = baseStats;
+		str = baseStats;
+		adr = baseStats;
+		luck = baseStats;
+		gold = baseStats;
+		for(int i = 0;i<lvl;i++) {
+			gold = gold+ dice.diceThrow(baseDice);
+			hp = hp + dice.diceThrow(15);
+			mp = mp + dice.diceThrow(10);
+			vit = vit+ dice.diceThrow(baseDice);
+			intel = intel+ dice.diceThrow(baseDice);
+			str = str+ dice.diceThrow(baseDice);
+			adr = adr+ dice.diceThrow(baseDice);
+			luck = luck+ dice.diceThrow(baseDice);
+			
+		}
 		
 		cou = 8+ dice.diceThrow(7);
 		cha= 8+ dice.diceThrow(5);
