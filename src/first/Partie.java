@@ -19,7 +19,7 @@ public class Partie {
 	
 	public Monster rencontreMonstre() {
 		Dice d = new Dice();
-		int  a =d.diceThrow(100);
+		int  a = d.diceThrow(100);
 		Monster m; 
 		if(a <60) {
 			m= new Goblin(1); 

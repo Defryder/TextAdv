@@ -21,7 +21,7 @@ public class Main {
 		int action = 255;
 		Monster m =null;
 		int nbCombat = 0;
-		while(stop ==false) {
+		while(stop == false) {
 			while(combat == false && stats == false) {
 				partie.demandeActionHorsCombat();
 				action= sc.nextInt();
@@ -57,7 +57,7 @@ public class Main {
 			
 			}
 			System.out.println(hero.toString());
-			if(nbCombat %5 == 0) {
+			if(nbCombat %1 == 0) {
 				System.out.println("Félicitation, vous avez battu 5 monstres voulez vous vous rendre au marché?(o/n)");
 				String mark = sc.nextLine();
 				switch(mark) {
