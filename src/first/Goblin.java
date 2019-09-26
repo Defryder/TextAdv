@@ -5,7 +5,7 @@ public class Goblin extends Monster{
 		
 		this.armor = dice.diceThrow(2)-1;//0 - 1
 		hp=10 + dice.diceThrow(6);
-		mp =0 + dice.diceThrow(6);
+		mp =3 + dice.diceThrow(2);
 		this.setSkillOne("Smash");
 		int baseStats =2;
 		int baseDice =3;
@@ -40,8 +40,11 @@ public class Goblin extends Monster{
 			
 		}
 		for(int i = 0;i<lvl ;i++) {
-			hp = hp + dice.diceThrow(baseDice);
-			mp = mp + dice.diceThrow(baseDice);
+			hp = hp + dice.diceThrow(baseDice+1);
+			mp = mp + dice.diceThrow(baseDice-1);
+			if(i%4 == 0) {
+				this.armor ++;
+			}
 		}
 		
 		
@@ -133,19 +136,13 @@ public class Goblin extends Monster{
 	}
 
 	@Override
-	public void skillTwo() {
+	public void skillTwo(Character m) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void skillThree() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void skillOne() {
+	public void skillThree(Character m) {
 		// TODO Auto-generated method stub
 		
 	}

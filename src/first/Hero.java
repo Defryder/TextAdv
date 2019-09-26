@@ -200,13 +200,13 @@ public class Hero extends Character{
 	}
 
 	@Override
-	public void skillTwo() {
+	public void skillTwo(Character m) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void skillThree() {
+	public void skillThree(Character m) {
 		// TODO Auto-generated method stub
 		
 	}

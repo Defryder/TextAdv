@@ -60,11 +60,11 @@ public class Partie {
 				if(combat ==false) {
 					break;
 				}
-				m.attack(hero);
+				m.decideAttack(hero);
 				combat = !hero.checkDeath();
 			}else{
 				System.out.println("Le "+m.getName()+" est plus courageux que vous");				
-				m.attack(hero);
+				m.decideAttack(hero);
 				combat = !hero.checkDeath();
 				if(combat ==false) {
 					break;
@@ -76,11 +76,11 @@ public class Partie {
 		case 2:
 			if(m.getCou()<hero.getCou()) {
 				hero.potionSoin();
-				m.attack(hero);
+				m.decideAttack(hero);
 				combat = !hero.checkDeath();
 			}else{
 				System.out.println("Le "+m.getName()+" est plus courageux que vous");				
-				m.attack(hero);
+				m.decideAttack(hero);
 				combat = !hero.checkDeath();
 				if(combat ==false) {
 					break;
@@ -89,15 +89,18 @@ public class Partie {
 			}
 			break;
 		case 3:
-			if(m.getVit()<hero.getVit()) {
-				System.out.println("Vous réussissez à vous enfuir");				
-				combat =false;
-			}else{
-				System.out.println("Le "+m.getName()+" est plus rapide que vous, il vous poursuit et vous touche dans le dos");				
-				m.attack(hero);
+			if(m.getCou()<hero.getCou()) {
+				hero.potionMana();
+				m.decideAttack(hero);
 				combat = !hero.checkDeath();
-				combat = !m.checkDeath();
-			
+			}else{
+				System.out.println("Le "+m.getName()+" est plus courageux que vous");				
+				m.decideAttack(hero);
+				combat = !hero.checkDeath();
+				if(combat ==false) {
+					break;
+				}
+				hero.potionMana();
 			}
 			break;
 		case 4:
@@ -107,11 +110,11 @@ public class Partie {
 				if(combat ==false) {
 					break;
 				}
-				m.attack(hero);
+				m.decideAttack(hero);
 				combat = !hero.checkDeath();
 			}else{
 				System.out.println("Le "+m.getName()+" est plus courageux que vous");				
-				m.attack(hero);
+				m.decideAttack(hero);
 				combat = !hero.checkDeath();
 				if(combat ==false) {
 					break;
@@ -120,7 +123,18 @@ public class Partie {
 				combat = !m.checkDeath();
 			}
 			break;
-
+		case 5:
+			if(m.getVit()<hero.getVit()) {
+				System.out.println("Vous réussissez à vous enfuir");				
+				combat =false;
+			}else{
+				System.out.println("Le "+m.getName()+" est plus rapide que vous, il vous poursuit et vous touche dans le dos");				
+				m.decideAttack(hero);
+				combat = !hero.checkDeath();
+				combat = !m.checkDeath();
+			
+			}
+			break;
 		}
 		return combat;
 	}
