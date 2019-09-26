@@ -120,6 +120,8 @@ public class Goblin extends Monster{
 			}else{  //unnarmed
 				k= 4+t*((this.str/5)) - m.getArmor();
 				this.setHp(hp - t );
+				System.out.println("Il s'inflige "+t+"HP en vous smashant à main nue!");
+
 			}
 			if(k>0) {
 				m.setHp(m.getHp()- k);	
@@ -129,6 +131,7 @@ public class Goblin extends Monster{
 			}
 			if(t > 3) {
 				m.setArmor(m.getArmor()-1);
+				System.out.println("Vous perdez un point d'armure");
 			}
 			this.mp = mp-5;
 		}else {

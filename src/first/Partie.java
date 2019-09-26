@@ -61,11 +61,13 @@ public class Partie {
 					break;
 				}
 				m.decideAttack(hero);
+				combat = !m.checkDeath();
 				combat = !hero.checkDeath();
 			}else{
 				System.out.println("Le "+m.getName()+" est plus courageux que vous");				
 				m.decideAttack(hero);
 				combat = !hero.checkDeath();
+				combat = !m.checkDeath();
 				if(combat ==false) {
 					break;
 				}
@@ -77,10 +79,12 @@ public class Partie {
 			if(m.getCou()<hero.getCou()) {
 				hero.potionSoin();
 				m.decideAttack(hero);
+				combat = !m.checkDeath();
 				combat = !hero.checkDeath();
 			}else{
 				System.out.println("Le "+m.getName()+" est plus courageux que vous");				
 				m.decideAttack(hero);
+				combat = !m.checkDeath();
 				combat = !hero.checkDeath();
 				if(combat ==false) {
 					break;
@@ -92,10 +96,12 @@ public class Partie {
 			if(m.getCou()<hero.getCou()) {
 				hero.potionMana();
 				m.decideAttack(hero);
+				combat = !m.checkDeath();
 				combat = !hero.checkDeath();
 			}else{
 				System.out.println("Le "+m.getName()+" est plus courageux que vous");				
 				m.decideAttack(hero);
+				combat = !m.checkDeath();
 				combat = !hero.checkDeath();
 				if(combat ==false) {
 					break;
@@ -111,10 +117,12 @@ public class Partie {
 					break;
 				}
 				m.decideAttack(hero);
+				combat = !m.checkDeath();
 				combat = !hero.checkDeath();
 			}else{
 				System.out.println("Le "+m.getName()+" est plus courageux que vous");				
 				m.decideAttack(hero);
+				combat = !m.checkDeath();
 				combat = !hero.checkDeath();
 				if(combat ==false) {
 					break;
