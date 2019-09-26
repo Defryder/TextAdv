@@ -6,7 +6,7 @@ public class Goblin extends Monster{
 		this.armor = dice.diceThrow(2)-1;//0 - 1
 		hp=10 + dice.diceThrow(6);
 		mp =0 + dice.diceThrow(6);
-
+		this.setSkillOne("Smash");
 		int baseStats =2;
 		int baseDice =3;
 		this.lvl = lvl;
@@ -106,7 +106,30 @@ public class Goblin extends Monster{
 
 	@Override
 	public void skillOne(Character m) {
-		// TODO Auto-generated method stub
+		int k = 0;
+		if(this.mp>2) {
+			System.out.println(name +" essaie de vous smasher :");
+			int t = dice.diceThrow(6);
+			if(this.weapon.getName() == "gourdin" ) {
+				k= 6+t*((this.str/5)) - m.getArmor();				
+			}else{  //unnarmed
+				k= 4+t*((this.str/5)) - m.getArmor();
+				this.setHp(hp - t );
+			}
+			if(k>0) {
+				m.setHp(m.getHp()- k);	
+				System.out.println(name+" inflige "+ (k+m.getArmor())+"dégats, vous perdez "+k+"HP");
+			}else {
+				System.out.println("Votre armure vous protège");
+			}
+			if(t > 3) {
+				m.setArmor(m.getArmor()-1);
+			}
+			this.mp = mp-3;
+		}else {
+			System.out.println("MP insuffisants, on ne devrait pas pouvoir atteindre ce message");
+		}
+	
 	}
 
 	@Override
