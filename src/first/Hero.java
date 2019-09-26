@@ -185,14 +185,13 @@ public class Hero extends Character{
 		int k = 0;
 		if(this.mp>7) {
 			System.out.println("Une lame d'air fond sur le l'ennemi :");
-			this.mp = mp-3;
+			this.mp = mp-8;
 			k= 8+dice.diceThrow(8)*((this.intel/5)) - m.getArmor();
 			if(k>0) {
 				m.setHp(m.getHp()- k);				
 				System.out.println("vous infligez "+ k+"HP");
 			}else {
 				System.out.println("elle s'écrase sur l'armure de votre adversaire qui vous toise en ayant l'impression qu'un moustique l'a piqué");
-
 			}
 		}else {
 			System.out.println("une douce brise rafraichit votre adversaire, vos MP sont insuffisants");

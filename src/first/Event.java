@@ -34,25 +34,25 @@ public class Event {
 		System.out.println(" 2 : Partir");
 		Market market = new Market(hero);
 		int mark = sc.nextInt();
-    int malinois = 53;
-			while(malinois != 8) {
-		switch(mark) {
-		case 1:
-      System.out.println("Vous avez  "+hero.getGold()+" d'or, "+hero.getArmor()+" d'armure, "+hero.getNbPotionSoin()+" potion(s) de soin");
-			market.demandeActionMarket();
-			int malinois = sc.nextInt();
-			market.actionMarket(malinois, hero);
-			break;
-		case 2:
-        					malinois = 8;
+		int malinois = 53;
+		while(malinois != 8) {
+			switch(mark) {
+			case 1:
+				System.out.println("Vous avez  "+hero.getGold()+" d'or, "+hero.getArmor()+" d'armure, "+hero.getNbPotionSoin()+" potion(s) de soin"+hero.getNbPotionMana()+" potion(s) de mana");
+				market.demandeActionMarket();
+				malinois = sc.nextInt();
+				market.actionMarket(malinois, hero);
+				break;
+			case 2:
+				malinois = 8;
 
-			break;
-		default:
-        					malinois = 8;
+				break;
+			default:
+				malinois = 8;
 
-			System.out.println("market fatal error");
+				System.out.println("market fatal error");
+			}
 		}
-      }
 	}
 	
 	static void Combat(Hero hero, Partie partie) {
