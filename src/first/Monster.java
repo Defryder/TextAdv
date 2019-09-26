@@ -25,7 +25,7 @@ public abstract class Monster extends Character{
 			int d;
 			if(this.getSkillTwo() !=null) {
 			
-				if(this.getSkillThree() !=null) {
+				if(this.getSkillThree() !=null ) {
 					d = dice.diceThrow(100);
 					if(d < 12) {
 						this.skillOne(c);
