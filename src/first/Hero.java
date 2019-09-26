@@ -192,7 +192,6 @@ public class Hero extends Character{
 				System.out.println("vous infligez "+ k+"HP");
 			}else {
 				System.out.println("elle s'écrase sur l'armure de votre adversaire qui vous toise en ayant l'impression qu'un moustique l'a piqué");
-
 			}
 		}else {
 			System.out.println("une douce brise rafraichit votre adversaire, vos MP sont insuffisants");

@@ -70,7 +70,7 @@ public abstract class  Character {
 		boolean b = false;
 		if(hp<=0) {
 			b= true;
-			System.out.println("" +name +" êtes mort");
+			System.out.println("" +name +" est mort");
 			
 		}
 		return b;

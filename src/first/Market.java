@@ -46,6 +46,14 @@ public class Market {
 				System.out.println("vous n'avez pas assez d'or!");
 			}
 			break;
+		case 3:
+			if (hero.getGold() >= 20) {
+				hero.setNbPotionMana(hero.getNbPotionMana() + 1 );
+				hero.setGold(hero.getGold()-20);
+			}else {
+				System.out.println("vous n'avez pas assez d'or!");
+			}
+			break;
 		case 8:
 			break;
 		}
