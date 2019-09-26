@@ -27,11 +27,14 @@ public class Partie {
 		}
 		if(a <5) {
 			m= new DragonVert(lvlvl); 
-		}else if(5 <= a && a < 40) {
-			m= new Wolf(lvlvl); 			
-		}else {
-			m= new Goblin(lvlvl); 
+		}else if(5 <= a && a < 35) {
+			m= new Wolf(lvlvl); 
+		}else { //if(35 <= a && a < 45) {
+			m= new Slime(lvlvl); 
 		}
+//		}else {
+//			m= new Goblin(lvlvl); 
+//		}
 		
 		System.out.println();
 		System.out.println(m.toString());
