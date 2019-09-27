@@ -52,6 +52,9 @@ public class Wolf extends Monster{
 		for(int i = 0;i<lvl ;i++) {
 			hp = hp + dice.diceThrow(baseDice);
 			mp = mp + dice.diceThrow(baseDice);
+			if(i%3 == 0) {
+				this.armor ++;
+			}
 		}
 		cou = 8+ dice.diceThrow(7);
 		cha= 8+ dice.diceThrow(5);
@@ -80,22 +83,19 @@ public class Wolf extends Monster{
 		return false;
 	}
 
-	@Override
-	public void skillOne() {
-		//queue du dragon //swipe   ???
-	}
+	
 	@Override
 	public void skillOne(Character m) {
 		//queue du dragon //swipe   ???
 	}
 
 	@Override
-	public void skillTwo() {
+	public void skillTwo(Character m) {
 // coup de croc		
 	}
 
 	@Override
-	public void skillThree() {
+	public void skillThree(Character m) {
 	//souffle du dragon	
 	}
 

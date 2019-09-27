@@ -118,8 +118,8 @@ public abstract class  Character {
 	}
 
 	public  abstract void skillOne(Character m);
-	public  abstract void skillTwo();
-	public  abstract void skillThree();
+	public  abstract void skillTwo(Character m);
+	public  abstract void skillThree(Character m);
 
 
 	public int getHpMax() {

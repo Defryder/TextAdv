@@ -5,8 +5,10 @@ public class Goblin extends Monster{
 		
 		this.armor = dice.diceThrow(2)-1;//0 - 1
 		hp=10 + dice.diceThrow(6);
-		mp =0 + dice.diceThrow(6);
+		mp =3 + dice.diceThrow(2);
 		this.setSkillOne("Smash");
+		this.setSkillTwo(null);
+		this.setSkillThree(null);
 		int baseStats =2;
 		int baseDice =3;
 		this.lvl = lvl;
@@ -40,8 +42,11 @@ public class Goblin extends Monster{
 			
 		}
 		for(int i = 0;i<lvl ;i++) {
-			hp = hp + dice.diceThrow(baseDice);
-			mp = mp + dice.diceThrow(baseDice);
+			hp = hp + dice.diceThrow(baseDice+1);
+			mp = mp + dice.diceThrow(baseDice-1);
+			if(i%4 == 0) {
+				this.armor ++;
+			}
 		}
 		
 		
@@ -107,7 +112,7 @@ public class Goblin extends Monster{
 	@Override
 	public void skillOne(Character m) {
 		int k = 0;
-		if(this.mp>2) {
+		if(this.mp>4) {
 			System.out.println(name +" essaie de vous smasher :");
 			int t = dice.diceThrow(6);
 			if(this.weapon.getName() == "gourdin" ) {
@@ -115,6 +120,8 @@ public class Goblin extends Monster{
 			}else{  //unnarmed
 				k= 4+t*((this.str/5)) - m.getArmor();
 				this.setHp(hp - t );
+				System.out.println("Il s'inflige "+t+"HP en vous smashant à main nue!");
+
 			}
 			if(k>0) {
 				m.setHp(m.getHp()- k);	
@@ -124,28 +131,24 @@ public class Goblin extends Monster{
 			}
 			if(t > 3) {
 				m.setArmor(m.getArmor()-1);
+				System.out.println("Vous perdez un point d'armure");
 			}
-			this.mp = mp-3;
+			this.mp = mp-5;
 		}else {
-			System.out.println("MP insuffisants, on ne devrait pas pouvoir atteindre ce message");
+//			System.out.println("MP insuffisants, on ne devrait pas pouvoir atteindre ce message");
+			m.attack(m);
 		}
 	
 	}
 
 	@Override
-	public void skillTwo() {
+	public void skillTwo(Character m) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void skillThree() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void skillOne() {
+	public void skillThree(Character m) {
 		// TODO Auto-generated method stub
 		
 	}

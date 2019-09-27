@@ -51,6 +51,9 @@ public class DragonVert extends Monster{
 		for(int i = 0;i<lvl ;i++) {
 			hp = hp + dice.diceThrow(baseDice);
 			mp = mp + dice.diceThrow(baseDice);
+			if(i%3 == 0) {
+				this.armor ++;
+			}
 		}
 		
 		cou = 8+ dice.diceThrow(7);
@@ -86,19 +89,15 @@ public class DragonVert extends Monster{
 	}
 
 	@Override
-	public void skillTwo() {
+	public void skillTwo(Character m) {
 // coup de croc		
 	}
 
 	@Override
-	public void skillThree() {
+	public void skillThree(Character m) {
 	//souffle du dragon	
 	}
 
-	@Override
-	public void skillOne() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 }
