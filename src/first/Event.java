@@ -3,30 +3,30 @@ import java.util.Scanner;
 
 public class Event {
 	static void randomEvent(Hero hero, Partie partie) {
-		
+
 		Dice d = new Dice();
 		int  a = d.diceThrow(100);
 
 		if(a < 5) {
 			//rien
-			Deception();
+			deception();
 		}
 		else if(5 <= a && a < 65) {
 			//combat
-			Combat(hero, partie);
+			combat(hero, partie);
 		}
 		else if(65 <= a && a < 95) {
 
-			Marchand(hero);
+			marchand(hero);
 
 		}
 		else {
 			//loot?
-			Loot();
+			loot();
 		}
 	}
-	
-	static void Marchand(Hero hero) {
+
+	static void marchand(Hero hero) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous trouvez ... un marchant!");
 		System.out.println("Que voulez vous faire ? ");
@@ -54,8 +54,8 @@ public class Event {
 			}
 		}
 	}
-	
-	static void Combat(Hero hero, Partie partie) {
+
+	static void combat(Hero hero, Partie partie) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous trouvez ... de la bastoooon!");
 		boolean combat = true;
@@ -74,13 +74,13 @@ public class Event {
 			}
 		}
 	}
-	
-	static void Loot() {
+
+	static void loot() {
 		System.out.println("Vous trouvez ... un truc?");
 		System.out.println("C'etait surement le vent.");
 	}
-	
-	static void Deception() {
+
+	static void deception() {
 		System.out.println("Vous trouvez ... rien du tout.");
 	}
 }
